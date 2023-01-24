@@ -4,7 +4,7 @@ include = [
 
 version = "<%= package.version %>-l2"
 
-[contract.Safe]
-artifact = "SafeL2"
+[contract.SafeSingleton]
+artifact = "GnosisSafeL2"
 salt = "<%= settings.salt %>"
 create2 = true

@@ -1,7 +1,7 @@
-name = "safe-impls"
+name = "safe-impl"
 version = "<%= package.version %>"
 
-description = "Ethereum multisig contract"
+description = "Ethereum multisig contract--implementation contracts"
 
 [setting.salt]
 defaultValue = "0x0000000000000000000000000000000000000000000000000000000000000000"
@@ -12,7 +12,7 @@ salt = "<%= settings.salt %>"
 create2 = true
 
 [contract.SafeProxyFactory]
-artifact = "SafeProxyFactory"
+artifact = "GnosisSafeProxyFactory"
 salt = "<%= settings.salt %>"
 create2 = true
 
@@ -46,7 +46,7 @@ artifact = "SignMessageLib"
 salt = "<%= settings.salt %>"
 create2 = true
 
-[contract.Safe]
-artifact = "Safe"
+[contract.SafeSingleton]
+artifact = "GnosisSafe"
 salt = "<%= settings.salt %>"
 create2 = true
