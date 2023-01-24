@@ -1,0 +1,10 @@
+include = [
+    "cannonfile.toml"
+]
+
+version = "<%= package.version %>-l2"
+
+[contract.Safe]
+artifact = "SafeL2"
+salt = "<%= settings.salt %>"
+create2 = true
