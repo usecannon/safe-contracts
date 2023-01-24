@@ -1,0 +1,52 @@
+name = "safe-impls"
+version = "<%= package.version %>"
+
+description = "Ethereum multisig contract"
+
+[setting.salt]
+defaultValue = "0x0000000000000000000000000000000000000000000000000000000000000000"
+
+[contract.SimulateTxAccessor]
+artifact = "SimulateTxAccessor"
+salt = "<%= settings.salt %>"
+create2 = true
+
+[contract.SafeProxyFactory]
+artifact = "SafeProxyFactory"
+salt = "<%= settings.salt %>"
+create2 = true
+
+[contract.DefaultCallbackHandler]
+artifact = "DefaultCallbackHandler"
+salt = "<%= settings.salt %>"
+create2 = true
+
+[contract.CompatibilityFallbackHandler]
+artifact = "CompatibilityFallbackHandler"
+salt = "<%= settings.salt %>"
+create2 = true
+
+[contract.CreateCall]
+artifact = "CreateCall"
+salt = "<%= settings.salt %>"
+create2 = true
+
+[contract.MultiSend]
+artifact = "MultiSend"
+salt = "<%= settings.salt %>"
+create2 = true
+
+[contract.MultiSendCallOnly]
+artifact = "MultiSendCallOnly"
+salt = "<%= settings.salt %>"
+create2 = true
+
+[contract.SignMessageLib]
+artifact = "SignMessageLib"
+salt = "<%= settings.salt %>"
+create2 = true
+
+[contract.Safe]
+artifact = "Safe"
+salt = "<%= settings.salt %>"
+create2 = true
