@@ -1,0 +1,50 @@
+name = "safe"
+version = "1.3.0"
+
+description = "Deploys a safe Ethereum multisig contract"
+
+[setting.safe_impl_package]
+defaultValue = "safe-impl:1.3.0"
+
+[setting.salt]
+
+[setting.owners]
+
+[setting.threshold]
+defaultValue = "1"
+
+[setting.initTo]
+defaultValue = "0x0000000000000000000000000000000000000000"
+
+[setting.initData]
+defaultValue = "0x"
+
+[setting.fallbackHandler]
+defaultValue = "0x0000000000000000000000000000000000000000"
+
+[setting.paymentToken]
+defaultValue = "0x0000000000000000000000000000000000000000"
+
+[setting.paymentAmount]
+defaultValue = "0"
+
+[setting.paymentReceiver]
+defaultValue = "0x0000000000000000000000000000000000000000"
+
+[import.impl]
+source = "<%= settings.safe_impl_package %>"
+
+[invoke.create_safe]
+target = ["impl.SafeProxyFactory"]
+func = "createProxyWithNonce"
+args = [
+    "<%= imports.impl.contracts.SafeSingleton.address %>",
+    "<%= defaultAbiCoder.encode(['address[]','uint256','address','bytes','address','address','uint256','address'], [settings.owners.split(','),settings.threshold,settings.initTo,settings.initData,settings.fallbackHandler,settings.paymentToken,settings.paymentAmount,settings.paymentReceiver]) %>",
+    "<%= settings.salt %>"
+]
+
+factory.Safe.abiOf = ["impl.SafeSingleton"]
+factory.Safe.event = "ProxyCreation"
+factory.Safe.arg = 0
+
+depends = ["import.impl"]
