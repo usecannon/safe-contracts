@@ -1,6 +1,7 @@
 import "@nomicfoundation/hardhat-toolbox";
 import type { HardhatUserConfig, HttpNetworkUserConfig } from "hardhat/types";
 import "hardhat-deploy";
+import "hardhat-cannon";
 import dotenv from "dotenv";
 import yargs from "yargs";
 import { getSingletonFactoryInfo } from "@safe-global/safe-singleton-factory";
