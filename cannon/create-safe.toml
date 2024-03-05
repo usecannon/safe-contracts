@@ -1,10 +1,10 @@
 name = "safe"
-version = "1.3.0"
+version = "1.4.1"
 
 description = "Deploys a safe Ethereum multisig contract"
 
 [setting.safe_impl_package]
-defaultValue = "safe-impl:1.3.0"
+defaultValue = "safe-impl:1.4.1"
 
 [setting.salt]
 
@@ -46,5 +46,3 @@ args = [
 factory.Safe.abiOf = ["impl.SafeSingleton"]
 factory.Safe.event = "ProxyCreation"
 factory.Safe.arg = 0
-
-depends = ["import.impl"]

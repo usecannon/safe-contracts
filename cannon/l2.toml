@@ -1,10 +1,10 @@
 include = [
-    "cannonfile.toml"
+    "l1.toml"
 ]
 
-version = "<%= package.version %>-l2"
+version = "1.4.1-l2"
 
 [contract.SafeSingleton]
-artifact = "GnosisSafeL2"
+artifact = "SafeL2"
 salt = "<%= settings.salt %>"
 create2 = true

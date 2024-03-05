@@ -1,5 +1,5 @@
 name = "safe-impl"
-version = "1.3.0"
+version = "1.4.1"
 
 description = "Ethereum multisig contract--implementation contracts"
 
@@ -12,12 +12,12 @@ salt = "<%= settings.salt %>"
 create2 = true
 
 [contract.SafeProxyFactory]
-artifact = "GnosisSafeProxyFactory"
+artifact = "SafeProxyFactory"
 salt = "<%= settings.salt %>"
 create2 = true
 
-[contract.DefaultCallbackHandler]
-artifact = "DefaultCallbackHandler"
+[contract.TokenCallbackHandler]
+artifact = "TokenCallbackHandler"
 salt = "<%= settings.salt %>"
 create2 = true
 
@@ -47,6 +47,6 @@ salt = "<%= settings.salt %>"
 create2 = true
 
 [contract.SafeSingleton]
-artifact = "GnosisSafe"
+artifact = "Safe"
 salt = "<%= settings.salt %>"
 create2 = true
