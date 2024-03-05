@@ -7,8 +7,10 @@ description = "Deploys a safe Ethereum multisig contract"
 defaultValue = "safe-impl:1.4.1"
 
 [setting.salt]
+defaultValue = "0x0000000000000000000000000000000000000000000000000000000000000000"
 
 [setting.owners]
+defaultValue = "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266"
 
 [setting.threshold]
 defaultValue = "1"
