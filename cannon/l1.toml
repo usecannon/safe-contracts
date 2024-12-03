@@ -1,0 +1,63 @@
+name = "safe-impl"
+version = "1.4.1"
+
+description = "Ethereum multisig deploy.-implementation deploy."
+
+[var.main]
+salt = "0x0000000000000000000000000000000000000000000000000000000000000000"
+
+# artificial 
+
+[deploy.SimulateTxAccessor]
+artifact = "SimulateTxAccessor"
+salt = "<%= settings.salt %>"
+create2 = "0xE1CB04A0fA36DdD16a06ea828007E35e1a3cBC37"
+ifExists = "continue"
+
+[deploy.SafeProxyFactory]
+artifact = "SafeProxyFactory"
+salt = "<%= settings.salt %>"
+create2 = "0xE1CB04A0fA36DdD16a06ea828007E35e1a3cBC37"
+ifExists = "continue"
+
+[deploy.TokenCallbackHandler]
+artifact = "TokenCallbackHandler"
+salt = "<%= settings.salt %>"
+create2 = "0xE1CB04A0fA36DdD16a06ea828007E35e1a3cBC37"
+ifExists = "continue"
+
+[deploy.CompatibilityFallbackHandler]
+artifact = "CompatibilityFallbackHandler"
+salt = "<%= settings.salt %>"
+create2 = "0xE1CB04A0fA36DdD16a06ea828007E35e1a3cBC37"
+ifExists = "continue"
+
+[deploy.CreateCall]
+artifact = "CreateCall"
+salt = "<%= settings.salt %>"
+create2 = "0xE1CB04A0fA36DdD16a06ea828007E35e1a3cBC37"
+ifExists = "continue"
+
+[deploy.MultiSend]
+artifact = "MultiSend"
+salt = "<%= settings.salt %>"
+create2 = "0xE1CB04A0fA36DdD16a06ea828007E35e1a3cBC37"
+ifExists = "continue"
+
+[deploy.MultiSendCallOnly]
+artifact = "MultiSendCallOnly"
+salt = "<%= settings.salt %>"
+create2 = "0xE1CB04A0fA36DdD16a06ea828007E35e1a3cBC37"
+ifExists = "continue"
+
+[deploy.SignMessageLib]
+artifact = "SignMessageLib"
+salt = "<%= settings.salt %>"
+create2 = "0xE1CB04A0fA36DdD16a06ea828007E35e1a3cBC37"
+ifExists = "continue"
+
+[deploy.SafeSingleton]
+artifact = "Safe"
+salt = "<%= settings.salt %>"
+create2 = "0xE1CB04A0fA36DdD16a06ea828007E35e1a3cBC37"
+ifExists = "continue"

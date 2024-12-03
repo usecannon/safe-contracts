@@ -1,0 +1,30 @@
+include = [
+    "l1.toml"
+]
+
+version = "1.4.1"
+
+[deploy.SafeSingletonL2]
+artifact = "SafeL2"
+salt = "<%= settings.salt %>"
+create2 = "0xE1CB04A0fA36DdD16a06ea828007E35e1a3cBC37"
+ifExists = "continue"
+
+[deploy.SafeToL2Setup]
+artifact = "SafeToL2Setup"
+salt = "<%= settings.salt %>"
+create2 = "0xE1CB04A0fA36DdD16a06ea828007E35e1a3cBC37"
+ifExists = "continue"
+
+[deploy.SafeToL2Migration]
+artifact = "SafeToL2Migration"
+salt = "<%= settings.salt %>"
+create2 = "0xE1CB04A0fA36DdD16a06ea828007E35e1a3cBC37"
+ifExists = "continue"
+
+[deploy.SafeMigration]
+artifact = "SafeMigration"
+args = ["<%= contracts.SafeSingleton.address %>", "<%= contracts.SafeSingletonL2.address %>", "<%= contracts.CompatibilityFallbackHandler.address %>"]
+salt = "<%= settings.salt %>"
+create2 = "0xE1CB04A0fA36DdD16a06ea828007E35e1a3cBC37"
+ifExists = "continue"

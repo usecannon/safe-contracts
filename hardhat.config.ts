@@ -6,6 +6,7 @@ import "@matterlabs/hardhat-zksync-verify";
 import "@matterlabs/hardhat-zksync-ethers";
 import "@matterlabs/hardhat-zksync-node";
 import "hardhat-deploy";
+import "hardhat-cannon";
 import dotenv from "dotenv";
 import yargs from "yargs";
 import { getSingletonFactoryInfo } from "@safe-global/safe-singleton-factory";

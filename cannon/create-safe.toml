@@ -1,0 +1,33 @@
+name = "safe"
+version = "1.4.1-3"
+
+description = "Deploys a safe Ethereum multisig contract"
+
+include = [
+    "./l2.toml"
+]
+
+[var.safe_settings]
+owners = "SET ME TO YOUR COMMA-SEAPARATED OWNER ADDRESSES"
+salt = "SET ME TO SOME RANDOM NUMBER"
+threshold = "1"
+initTo = "0x0000000000000000000000000000000000000000"
+initData = "0x"
+fallbackHandler = "0x0000000000000000000000000000000000000000"
+paymentToken = "0x0000000000000000000000000000000000000000"
+paymentAmount = "0"
+paymentReceiver = "0x0000000000000000000000000000000000000000"
+
+[invoke.create_safe]
+target = ["SafeProxyFactory"]
+func = "createProxyWithNonce"
+args = [
+    "<%= contracts.SafeSingleton.address %>",
+    "<%= defaultAbiCoder.encode(['address[]','uint256','address','bytes','address','address','uint256','address'], [settings.owners.split(','),settings.threshold,settings.initTo,settings.initData,settings.fallbackHandler,settings.paymentToken,settings.paymentAmount,settings.paymentReceiver]) %>",
+    "<%= settings.salt %>"
+]
+
+factory.Safe.abiOf = ["SafeSingleton"]
+factory.Safe.event = "ProxyCreation"
+factory.Safe.arg = 0
+factory.Safe.highlight = true
